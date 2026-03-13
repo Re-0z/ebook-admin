@@ -29,6 +29,10 @@ class BookResource extends Resource
                 Forms\Components\Select::make('author_id')
                     ->relationship('author', 'name')
                     ->required(),
+                Forms\Components\Select::make('categories')
+                    ->relationship('categories', 'name')
+                    ->multiple()
+                    ->preload(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
                     ->prefix('$'),
@@ -56,6 +60,10 @@ class BookResource extends Resource
                 ->sortable(),
                 Tables\Columns\TextColumn::make('published_year')
                 ->sortable(),
+                Tables\Columns\TextColumn::make('categories.name')
+                ->searchable()
+                ->sortable()
+                ->badge(),
                 Tables\Columns\TextColumn::make('price')
                 ->money('USD')
                 ->sortable(),
