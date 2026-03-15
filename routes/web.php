@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\PublicCatalog;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', PublicCatalog::class);
