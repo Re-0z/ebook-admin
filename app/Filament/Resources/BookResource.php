@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Relationship;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BookResource extends Resource
@@ -69,7 +70,10 @@ class BookResource extends Resource
                 ->sortable(),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('categories')
+                ->relationship('categories', 'name')
+                ->multiple()
+                ->preload(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
