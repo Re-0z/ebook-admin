@@ -15,6 +15,8 @@ class Book extends Model
         'price',
         'cover_image',
         'published_year',
+        'description',
+        'cover_image',
     ];
 
     public function author()
