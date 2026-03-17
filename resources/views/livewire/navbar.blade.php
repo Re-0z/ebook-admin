@@ -27,6 +27,9 @@
 
                 <div x-show="open" @click.outside="open = false"
                      class="absolute flex flex-col bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                    <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition">
+                        Store
+                    </a>
                     <a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition">
                         Profile
                     </a>

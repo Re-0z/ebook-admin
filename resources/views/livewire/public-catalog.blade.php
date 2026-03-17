@@ -33,7 +33,7 @@
                     <h2 class="text-xl font-bold text-gray-900">{{ $book->title }}</h2>
                     <p class="text-sm text-indigo-600 font-semibold mb-3">By {{ $book->author->name }}</p>
 
-                    <p class="text-gray-600">Price: ${{ number_format($book->price, 2) }}</p>
+                    <p class="text-gray-600">Price: RM{{ number_format($book->price, 2) }}</p>
                     <p class="text-gray-500 text-sm mt-1 mb-4">Published: {{ $book->published_year }}</p>
 
                     <div class="mt-auto flex flex-wrap gap-2">
