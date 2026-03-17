@@ -7,6 +7,7 @@ use Livewire\Attributes\On;
 
 class Navbar extends Component
 {
+    #[On('cart-updated')]
     public function updateCart()
     {
 

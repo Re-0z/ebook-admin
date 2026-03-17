@@ -3,7 +3,7 @@
     E-Book<span class="text-gray-900">Store</span>
     </a>
 
-    <div class="relative flex items-center text-gray-700 hover:text-indigo-600 cursor-pointer transition font-bold text-lg">
+    <a href="/cart" class="relative flex items-center text-gray-700 hover:text-indigo-600 cursor-pointer transition font-bold text-lg">
         🛒 Cart
 
         @if($cartCount > 0)
@@ -11,5 +11,5 @@
                 {{ $cartCount }}
             </span>
         @endif
-    </div>
+    </a>
 </nav>
