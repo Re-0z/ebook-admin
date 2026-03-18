@@ -38,7 +38,7 @@
                 {{ $book->description ?? 'No description available for this book yet.' }}
             </p>
             <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                <span class="text-3xl font-black text-gray-900">${{ number_format($book->price, 2) }}</span>
+                <span class="text-3xl font-black text-gray-900">RM {{ number_format($book->price, 2) }}</span>
                 <div class="flex gap-3">
                     <button wire:click="addToCart" class="bg-white hover:bg-gray-50 text-indigo-600 border border-indigo-200 font-bold py-3 px-6 rounded-lg shadow-sm transform transition hover:-translate-y-1 flex items-center gap-2">
                         <span>🛒</span>Add to Cart

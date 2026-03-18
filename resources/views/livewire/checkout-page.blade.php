@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <button class="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
+                <button wire:click="placeOrder" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
                     Place Order
                 </button>
 

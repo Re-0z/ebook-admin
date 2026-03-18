@@ -54,9 +54,9 @@
                         <span>Total</span>
                         <span>RM {{ number_format(collect($books)->sum(fn($book) => $book->price * $quantities[$book->id]), 2) }}</span>
                     </div>
-                    <button class="mt-4 w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
+                    <a href="/checkout" class="mt-4 w-full block text-center bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
                         Proceed to Checkout
-                    </button>
+                    </a>
                 </div>
             </div>
         @endif
