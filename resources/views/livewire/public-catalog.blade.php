@@ -19,7 +19,7 @@
             <button
                 wire:click="toggleCategory({{ $category->id }})"
                 class="px-5 py-2 rounded-full text-sm font-bold transition-all shadow-sm
-                {{ in_array($category->id, $activeCategories) ? 'bg-indigo-600 text-whtie scale-105' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 hover:border-indigo-300' }}">
+                {{ in_array($category->id, $activeCategories) ? 'bg-indigo-600 text-white scale-105' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 hover:border-indigo-300' }}">
                 {{ $category->name }}
             </button>
         @endforeach
@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-                <div class="p-1 w-28 flex shrink-0 items-center justify-center bg-gray-50 rounded-md overflow-hidden">
+                <div class=" w-20 h-28 flex shrink-0 bg-gray-50 rounded-md overflow-hidden">
                     @if($book->cover_image)
                         <img src="{{ asset('storage/' . $book->cover_image) }}"
                         alt="{{ $book->title }} Cover"

@@ -33,6 +33,11 @@
                     <a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition">
                         Profile
                     </a>
+
+                    <a href="/my-borrows" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition">
+                        My Borrows
+                    </a>
+
                     <form method="POST" action="/logout">
                         @csrf
                         <button type="submit" class="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-50 hover:text-red-700 transition">

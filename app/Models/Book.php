@@ -15,8 +15,6 @@ class Book extends Model
         'price',
         'cover_image',
         'published_year',
-        'description',
-        'cover_image',
     ];
 
     public function author()
@@ -27,5 +25,10 @@ class Book extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function borrows()
+    {
+        return $this->hasMany(Borrow::class);
     }
 }

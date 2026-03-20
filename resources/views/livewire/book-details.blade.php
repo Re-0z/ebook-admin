@@ -16,7 +16,7 @@
             @endif
         </div>
 
-        <div class="md:w2/3 p-8 flex flex-col justify-center">
+        <div class="md:w-2/3 p-8 flex flex-col justify-center">
             <div class="flex flex-wrap gap-2 mb-4">
                 @foreach($book->categories as $category)
                     <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full uppercase tracking-wider">
@@ -32,6 +32,16 @@
                     </p>
                 </div>
             @endif
+
+            @if (session()->has('error'))
+                <div class="bg-red-100 border-1-4 border-red-500 text-red-800 p-4 mb-6 rounded-md shadow-sm"
+                role="alert">
+                <p class="font-bold flex items-center gap-2">
+                    <span>X</span> {{ session('error') }}
+                </p>
+                </div>
+            @endif
+
             <h1 class="text-4xl font-extrabold text-gray-900 mb-2">{{ $book->title }}</h1>
             <p class="text-xl text-gray-500 mb-6">Author: <span class="font-bold text-gray-800">{{ $book->author->name }}</span></p>
             <p class="text-gray-600 leading-relaxed mb-8 whitespace-pre-line">
@@ -46,6 +56,9 @@
                     <button wire:click="buyNow" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform transition hover:-translate-y-1">
                         Buy Now
                     </button>
+                    @auth
+                        <button wire:click="borrowBook" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex transform transition hover:-translate-y-1">Borrow</button>
+                    @endauth
                 </div>
             </div>
         </div>
