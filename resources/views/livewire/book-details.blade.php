@@ -1,66 +1,104 @@
-<div class="max-w-5xl mx-auto p-6 mt-10">
-    <a href="/" class="text-indigo-600 hover:text-indigo-800 font-semibold mb-6 inline-block">
-        &larr; Back to Catalog
-    </a>
+<div class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
 
-    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
-        <div class="md:w-1/3 bg-gray-50 flex items-center justify-center border-r border-gray-100">
-            @if($book->cover_image)
-                <img src="{{ asset('storage/' . $book->cover_image) }}"
-                alt="{{ $book->title }} Cover"
-                class="p-12 w-full max-w-xs h-auto object-contain rounded-md transition-transform hover:scale-105">
-            @else
-                <div class="p-12 flex items-center justify-center">
-                    <span class="text-gray-400 font-bold text-xl text-center">No Cover Image</span>
-                </div>
-            @endif
+    {{-- Flash Messages --}}
+    @if(session()->has('success'))
+        <div class="fixed bottom-8 right-8 z-[100] flex items-center gap-4 bg-white shadow-2xl px-6 py-4 border-l-4 border-secondary max-w-sm">
+            <div class="bg-secondary text-white p-1 flex-shrink-0">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+            </div>
+            <p class="font-bold text-sm tracking-tight font-body">{{ session('success') }}</p>
+        </div>
+    @endif
+
+    @if(session()->has('error'))
+        <div class="fixed bottom-8 right-8 z-[100] flex items-center gap-4 bg-white shadow-2xl px-6 py-4 border-l-4 border-error max-w-sm">
+            <p class="font-bold text-sm tracking-tight text-error font-body">{{ session('error') }}</p>
+        </div>
+    @endif
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+        {{-- Left: Book Cover --}}
+        <div class="lg:col-span-5 sticky top-32">
+            <div class="relative group aspect-[2/3] w-full max-w-md mx-auto">
+                <div class="absolute inset-0 bg-primary opacity-5 blur-3xl translate-y-8 scale-95"></div>
+                @if($book->cover_image)
+                    <img
+                        src="{{ asset('storage/' . $book->cover_image) }}"
+                        alt="{{ $book->title }}"
+                        class="relative w-full h-full object-cover shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                @else
+                    <div class="relative w-full h-full bg-surface-container-high flex items-center justify-center">
+                        <span class="font-headline font-bold text-on-surface-variant text-center px-8 text-xl">{{ $book->title }}</span>
+                    </div>
+                @endif
+            </div>
         </div>
 
-        <div class="md:w-2/3 p-8 flex flex-col justify-center">
-            <div class="flex flex-wrap gap-2 mb-4">
-                @foreach($book->categories as $category)
-                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full uppercase tracking-wider">
-                        {{ $category->name }}
-                    </span>
-                @endforeach
-            </div>
+        {{-- Right: Details & Actions --}}
+        <div class="lg:col-span-7 flex flex-col gap-10">
 
-            @if (session()->has('success'))
-                <div class="bg-emerald-100 border-l-4 border-emerald-500 text-emerald-800 p-4 mb-6 rounded-md shadow-sm transition-all" role="alert">
-                    <p class="font-bold flex items-center gap-2">
-                        <span>✅</span> {{ session('success') }}
-                    </p>
+            {{-- Category + Title + Meta --}}
+            <section class="flex flex-col gap-4">
+                <div class="flex flex-wrap gap-2">
+                    @foreach($book->categories as $category)
+                        <span class="text-secondary font-label font-semibold tracking-[0.15em] uppercase text-xs">{{ $category->name }}</span>
+                    @endforeach
                 </div>
-            @endif
+                <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tighter leading-none text-primary font-headline">{{ $book->title }}</h1>
+                <div class="flex items-center gap-6 mt-2 flex-wrap">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">Author</span>
+                        <span class="text-lg font-medium font-body">{{ $book->author->name }}</span>
+                    </div>
+                    <div class="h-8 w-px bg-outline-variant/30"></div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">Year</span>
+                        <span class="text-lg font-medium font-body">{{ $book->published_year }}</span>
+                    </div>
+                </div>
+            </section>
 
-            @if (session()->has('error'))
-                <div class="bg-red-100 border-1-4 border-red-500 text-red-800 p-4 mb-6 rounded-md shadow-sm"
-                role="alert">
-                <p class="font-bold flex items-center gap-2">
-                    <span>X</span> {{ session('error') }}
+            {{-- Description --}}
+            <section class="max-w-xl">
+                <p class="text-on-surface-variant text-lg leading-relaxed font-body">
+                    {{ $book->description ?? 'No description available for this book yet.' }}
                 </p>
-                </div>
-            @endif
+            </section>
 
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-2">{{ $book->title }}</h1>
-            <p class="text-xl text-gray-500 mb-6">Author: <span class="font-bold text-gray-800">{{ $book->author->name }}</span></p>
-            <p class="text-gray-600 leading-relaxed mb-8 whitespace-pre-line">
-                {{ $book->description ?? 'No description available for this book yet.' }}
-            </p>
-            <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                <span class="text-3xl font-black text-gray-900">RM {{ number_format($book->price, 2) }}</span>
-                <div class="flex gap-3">
-                    <button wire:click="addToCart" class="bg-white hover:bg-gray-50 text-indigo-600 border border-indigo-200 font-bold py-3 px-6 rounded-lg shadow-sm transform transition hover:-translate-y-1 flex items-center gap-2">
-                        <span>🛒</span>Add to Cart
+            {{-- Price & Actions --}}
+            <section class="bg-surface-container-low p-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold block mb-1">Price</span>
+                    <span class="text-4xl font-black text-secondary tracking-tighter font-headline">RM {{ number_format($book->price, 2) }}</span>
+                </div>
+                <div class="flex flex-col gap-3 min-w-[240px]">
+                    <button
+                        wire:click="addToCart"
+                        class="bg-secondary-container hover:bg-secondary text-primary hover:text-white font-bold py-4 px-6 transition-all duration-300 flex justify-center items-center gap-2 group font-label">
+                        <span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_cart</span>
+                        Add to Cart
                     </button>
-                    <button wire:click="buyNow" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform transition hover:-translate-y-1">
+                    <button
+                        wire:click="buyNow"
+                        class="bg-primary text-white font-bold py-4 px-6 hover:opacity-90 transition-all duration-300 flex justify-center items-center font-label">
                         Buy Now
                     </button>
                     @auth
-                        <button wire:click="borrowBook" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg flex transform transition hover:-translate-y-1">Borrow</button>
+                        <button
+                            wire:click="borrowBook"
+                            class="border border-outline-variant hover:border-primary text-primary font-semibold py-3 px-6 transition-all duration-300 flex justify-center items-center font-label">
+                            Borrow this Book
+                        </button>
                     @endauth
                 </div>
-            </div>
+            </section>
+
+            <a href="/" class="text-on-surface-variant hover:text-secondary font-label uppercase tracking-widest text-xs font-bold transition-colors flex items-center gap-2 self-start">
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back to Catalog
+            </a>
         </div>
     </div>
 </div>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#000000",
+              "on-surface-variant": "#45464d",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#2a1700",
+              "on-tertiary-fixed-variant": "#574425",
+              "inverse-on-surface": "#eef0ff",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#dae2fd",
+              "surface-container-high": "#e2e7ff",
+              "on-secondary-container": "#684000",
+              "on-surface": "#131b2e",
+              "error": "#ba1a1a",
+              "outline": "#76777d",
+              "on-primary-fixed-variant": "#3f465c",
+              "secondary": "#855300",
+              "secondary-container": "#fea619",
+              "secondary-fixed-dim": "#ffb95f",
+              "inverse-primary": "#bec6e0",
+              "surface-bright": "#faf8ff",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#7c839b",
+              "outline-variant": "#c6c6cd",
+              "surface-tint": "#565e74",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#283044",
+              "surface-container": "#eaedff",
+              "primary-container": "#131b2e",
+              "primary-fixed-dim": "#bec6e0",
+              "on-tertiary-container": "#98805d",
+              "on-background": "#131b2e",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#131b2e",
+              "background": "#faf8ff",
+              "surface": "#faf8ff",
+              "surface-container-low": "#f2f3ff",
+              "tertiary": "#000000",
+              "secondary-fixed": "#ffddb8",
+              "on-secondary-fixed-variant": "#653e00",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#271901",
+              "tertiary-fixed": "#fcdeb5",
+              "on-tertiary-fixed": "#271901",
+              "surface-dim": "#d2d9f4",
+              "primary-fixed": "#dae2fd",
+              "tertiary-fixed-dim": "#dec29a",
+              "surface-variant": "#dae2fd",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #faf8ff;
+      }
+      .atelier-header {
+        font-family: 'Manrope', sans-serif;
+      }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-amber-500 tracking-tighter">E-BookStore</div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-bold tracking-tight text-slate-900">
+<a class="text-amber-600 border-b-2 border-amber-500 pb-1" href="#">Browse</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors" href="#">Best Sellers</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors" href="#">New Releases</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors" href="#">Deals</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 hover:bg-slate-50 transition-all duration-200 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 transition-all duration-200 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 transition-all duration-200 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100/50 h-[1px] w-full"></div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 pt-16 pb-12 text-center">
+<h1 class="atelier-header text-6xl md:text-8xl font-extrabold tracking-tighter text-primary mb-8 leading-none">
+                The Digital Atelier
+            </h1>
+<div class="max-w-3xl mx-auto mb-10">
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 focus:border-secondary transition-all px-4 py-5 text-lg outline-none font-body" placeholder="Search by title, author, or ISBN..." type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="px-5 py-2 text-sm font-label uppercase tracking-widest bg-primary text-white hover:opacity-90 transition-opacity">Fiction</button>
+<button class="px-5 py-2 text-sm font-label uppercase tracking-widest bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all">Science</button>
+<button class="px-5 py-2 text-sm font-label uppercase tracking-widest bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all">History</button>
+<button class="px-5 py-2 text-sm font-label uppercase tracking-widest bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all">Romance</button>
+<button class="px-5 py-2 text-sm font-label uppercase tracking-widest bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all">Technology</button>
+</div>
+</section>
+<!-- Book Grid -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="flex justify-between items-end mb-12">
+<div class="space-y-1">
+<p class="text-xs font-label uppercase tracking-[0.2em] text-secondary font-bold">Curated Catalog</p>
+<h2 class="atelier-header text-3xl font-bold tracking-tight">Essence of Literature</h2>
+</div>
+<div class="hidden md:block">
+<p class="text-sm text-outline font-body italic">Showing 48 of 1,240 titles</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+<!-- Book Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist book cover design with clean typography on a neutral textured paper background featuring a single abstract architectural line" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqSac0lOmxaf9koQCg_zbSQYNrvTmv7QnB-3aPas5jlfyvPOrybu9fF8nEGA1oJcXDMeF3KhMD5Bj5Jyxmw9XOSiXMOClCfWjOcuRqkAmPtIqTMiFMN_Z6vhr8mZqSRCerKqlzf5zNkLDMyV21YR1_ARBxnn8BEvxl68f3XTwJrtF-e2NBOeUJy25HUE6bk9KwkPHl9IfTieVJAZMJjQYdTjf_SiGXmNy-4pupVkt3IhPTYUmxVRrYYZxvv2LzI07yv3l-B3HXcvpe"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+<button class="w-full py-4 bg-secondary text-white font-label uppercase tracking-widest text-xs font-bold transition-transform translate-y-4 group-hover:translate-y-0">View Details</button>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 tracking-tight leading-snug">The Architecture of Silence</h3>
+<p class="text-outline text-sm font-body">Elena Vance</p>
+<p class="mt-2 font-headline font-bold text-secondary">$24.00</p>
+</div>
+<!-- Book Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-500" data-alt="Elegant classic hardcover book resting on a dark walnut table with soft window light hitting the gold-embossed spine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCarW4TnrQbae_z5d4cJGnujv7XwbjIkgGnDxQILLFM9CTShM3ZHYd71ViY7JfhOaO0c94i3xQSIms8lhaDERX0_TQSM-FjuNjAIx6ufewBI8mrbXl_0DFp1BABs0Pct2AwckL31WxibSNjjbFRHJ-j79Se5zZYfrKnoUt6q_zzPqPrXggMY8wLPe6fUH5__kV5MN474Myj7qYvtAClMrYxyVGSM90AvFJY6OCYDn7MHggMzepKELN1k3vAH4V5Mte0VbA5_nJ-FlOw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+<button class="w-full py-4 bg-secondary text-white font-label uppercase tracking-widest text-xs font-bold transition-transform translate-y-4 group-hover:translate-y-0">View Details</button>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 tracking-tight leading-snug">A Study in Amber</h3>
+<p class="text-outline text-sm font-body">Julian Thorne</p>
+<p class="mt-2 font-headline font-bold text-secondary">$19.50</p>
+</div>
+<!-- Book Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-500" data-alt="Modern geometric book cover with bold primary colors and sharp contrasting angles representing a technological landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGdeTFyo1TAXHWXgwnnm2IKY83gsfi-38gDo93BsmjI3inpj6miQmyZ7aZ1p8h6x3QEjYJKj7seHWRKUfYpEwqbhkz7nHu82lItN4nPsc21a_9-_XA5c2kV5sokIWEG4wWCZlT0O-dkamZ-kFZQ8i5K388pvmTCp6DSeXA3rmaetynqZBYHAuxtT7hCrz_fAPUr-B72M4JF1zb7i7Ll57kevsQIoRGzmlBWVGsYsVWGpyKLwOHr-aWDYLLTK27QG9IiFxXm0RWz0X_"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+<button class="w-full py-4 bg-secondary text-white font-label uppercase tracking-widest text-xs font-bold transition-transform translate-y-4 group-hover:translate-y-0">View Details</button>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 tracking-tight leading-snug">Neural Tapestry</h3>
+<p class="text-outline text-sm font-body">Dr. Sarah Chen</p>
+<p class="mt-2 font-headline font-bold text-secondary">$32.00</p>
+</div>
+<!-- Book Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-500" data-alt="Moody dark green book cover with delicate white line art of a botanical garden in moonlight with ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvN0pqXSoZ-lNO-LYakge7FBRjUawUhN6kjKS7GlXXSpXNBvEOa7WDwCmdasulj0-Iqfsqz7952d_mnOsyDnW4FbXesQl8pVdrZq8iB1i05FPgraZhPW_i8oHzwGyNWyY5whxFVOoyty_yJvemeKW8dVYnhm1q7s92VeTJDsLUwrGg-m_WbDOJ1tZRdabfpH2xSD9FqyWBb8HV8in7CTnVd5rrG_wD2IGCKURoFWVckfqNQJGze_SWo2MMZOQdjI2gy9u3JQqq5DuV"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+<button class="w-full py-4 bg-secondary text-white font-label uppercase tracking-widest text-xs font-bold transition-transform translate-y-4 group-hover:translate-y-0">View Details</button>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg mb-1 tracking-tight leading-snug">Midnight Orchards</h3>
+<p class="text-outline text-sm font-body">Marcus Aurel</p>
+<p class="mt-2 font-headline font-bold text-secondary">$28.00</p>
+</div>
+</div>
+<!-- More Spacing and Asymmetry -->
+<div class="mt-32 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 bg-surface-container-low p-12 lg:p-24 relative">
+<span class="absolute top-8 left-8 text-6xl font-headline font-black text-outline/10">01</span>
+<h2 class="font-headline text-4xl font-bold mb-6 tracking-tight">The Artisan's Selection</h2>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                        Every month, our head curators handpick a collection that defines the current zeitgeist of digital and physical literature. No algorithms, only human intuition.
+                    </p>
+<button class="text-primary font-label font-bold uppercase tracking-widest text-sm border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors">Explore Selection</button>
+</div>
+<div class="md:col-span-5 aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed close-up of ink pens and heavy cotton paper scattered on a studio desk with soft morning light and shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABBWw0GOT22jzAe0Oxg3pZwIfD5ZgGJWHmS6wNAXSriCNFqkqQMscR31vqRgbY4dsPhMdntFQcHGEhBf2zqLdDYrwih-UHA0gYNQIF9Y7hyAO9Im6_2LgROPDm_pP-R1O4bDgrJ5hPSY1nG12mw3UVQKSPwpisbAddCOEOkqo-kYCkWpV-H6ypDMutZ3HZORoyZTIsH45Px96QblS5F9AK1i9n0uuqIGTRUVapET_42gRxZhO04tphBCotYNHSeSWvvme1rUFkVP8N"/>
+</div>
+</div>
+</section>
+<!-- Newsletter / Footer Callout -->
+<section class="border-t border-outline-variant/10 py-24 mt-24">
+<div class="max-w-3xl mx-auto px-6 text-center">
+<h2 class="font-headline text-3xl font-bold mb-4">Join the Collective</h2>
+<p class="font-body text-outline mb-10">Receive a weekly digest of high-concept literature and exclusive author interviews.</p>
+<div class="flex flex-col md:flex-row gap-0 max-w-lg mx-auto border-b border-primary/20">
+<input class="flex-1 py-4 px-2 bg-transparent border-none outline-none focus:ring-0 font-body" placeholder="Email address" type="email"/>
+<button class="py-4 px-8 font-label font-bold uppercase tracking-widest text-xs hover:text-secondary transition-colors">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-100 bg-[#faf8ff]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto gap-6">
+<div class="font-['Manrope'] font-bold uppercase tracking-widest text-slate-900">E-BookStore</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-amber-500 transition-opacity" href="#">Privacy</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-amber-500 transition-opacity" href="#">Terms</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-amber-500 transition-opacity" href="#">Support</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-amber-500 transition-opacity" href="#">Authors</a>
+</div>
+<div class="font-['Inter'] text-sm leading-relaxed text-slate-500">
+                © 2024 E-BookStore. Crafted for Readers.
+            </div>
+</div>
+<!-- Atelier Status Bar -->
+<div class="bg-surface-container-high py-2 px-8">
+<div class="max-w-7xl mx-auto flex justify-between items-center font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">
+<div class="flex gap-4">
+<span>Server: ATELIER-01</span>
+<span>System: ACTIVE</span>
+</div>
+<div>UTC: 12:44:02</div>
+</div>
+</div>
+</footer>
+</body></html>

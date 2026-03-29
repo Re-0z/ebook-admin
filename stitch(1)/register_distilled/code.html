@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | E-BookStore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#283044",
+              "on-secondary-container": "#684000",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#dae2fd",
+              "surface-container-low": "#f2f3ff",
+              "surface-dim": "#d2d9f4",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-bright": "#faf8ff",
+              "tertiary-fixed-dim": "#dec29a",
+              "tertiary-container": "#271901",
+              "on-tertiary-fixed-variant": "#574425",
+              "on-secondary": "#ffffff",
+              "tertiary": "#000000",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-tertiary-container": "#98805d",
+              "on-error": "#ffffff",
+              "surface-container": "#eaedff",
+              "outline": "#76777d",
+              "surface-container-highest": "#dae2fd",
+              "inverse-on-surface": "#eef0ff",
+              "surface": "#faf8ff",
+              "primary-container": "#131b2e",
+              "on-background": "#131b2e",
+              "secondary-fixed": "#ffddb8",
+              "on-surface-variant": "#45464d",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#653e00",
+              "secondary-container": "#fea619",
+              "on-secondary-fixed": "#2a1700",
+              "background": "#faf8ff",
+              "primary-fixed": "#dae2fd",
+              "outline-variant": "#c6c6cd",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#271901",
+              "surface-tint": "#565e74",
+              "inverse-primary": "#bec6e0",
+              "primary": "#000000",
+              "on-surface": "#131b2e",
+              "secondary": "#855300",
+              "on-primary-fixed": "#131b2e",
+              "tertiary-fixed": "#fcdeb5",
+              "on-primary-container": "#7c839b",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e2e7ff",
+              "secondary-fixed-dim": "#ffb95f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #faf8ff;
+      }
+    </style>
+</head>
+<body class="font-body text-on-background min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- Header / Brand Anchor -->
+<header class="fixed top-0 w-full z-50 bg-[#faf8ff]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-8 w-full max-w-screen-2xl mx-auto">
+<a class="font-headline font-black text-2xl tracking-tighter text-black" href="/">
+                E-BookStore
+            </a>
+<div class="flex items-center gap-8">
+<span class="font-label text-[10px] tracking-[0.1em] uppercase font-semibold text-outline">Step 01 / 02</span>
+<a class="font-headline font-bold tracking-tight uppercase text-xs text-slate-600 hover:text-amber-600 transition-all duration-300" href="/login">Login</a>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-6 pt-32 pb-24">
+<!-- Main Layout: Asymmetric Content -->
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left Side: Editorial Messaging -->
+<div class="lg:col-span-5 space-y-8 lg:sticky lg:top-40">
+<div class="space-y-4">
+<span class="font-label text-[10px] tracking-[0.2em] uppercase font-bold text-secondary">The Digital Atelier</span>
+<h1 class="font-headline text-5xl lg:text-7xl font-extrabold tracking-tighter leading-none text-primary">
+                        Join the <br/>Collective.
+                    </h1>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                    Access a curated library of architectural thought, digital craft, and timeless narratives. Your journey into the atelier starts here.
+                </p>
+<div class="pt-8 border-t border-outline-variant/20 flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="font-headline font-bold text-sm text-primary uppercase tracking-wider">Curated Selections</p>
+<p class="text-sm text-on-surface-variant">Hand-picked titles by master bibliophiles.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="brush" data-weight="fill" style="font-variation-settings: 'FILL' 1;">brush</span>
+<div>
+<p class="font-headline font-bold text-sm text-primary uppercase tracking-wider">Artisan Experience</p>
+<p class="text-sm text-on-surface-variant">A distraction-free reading canvas.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Minimalist Form -->
+<div class="lg:col-span-7 lg:pl-12">
+<div class="bg-surface-container-lowest p-12 lg:p-20 shadow-xl shadow-slate-900/5 relative overflow-hidden">
+<!-- Subtle texture element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 -mr-16 -mt-16 rounded-full blur-3xl"></div>
+<form class="space-y-12 relative z-10">
+<!-- Name Field -->
+<div class="group">
+<label class="block font-label text-[10px] tracking-[0.05em] uppercase font-semibold text-outline group-focus-within:text-secondary transition-colors duration-300 mb-2" for="full_name">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-secondary transition-all duration-500 placeholder:text-outline-variant/50 text-on-surface text-xl" id="full_name" name="full_name" placeholder="Johnathan Doe" type="text"/>
+</div>
+<!-- Email Field -->
+<div class="group">
+<label class="block font-label text-[10px] tracking-[0.05em] uppercase font-semibold text-outline group-focus-within:text-secondary transition-colors duration-300 mb-2" for="email">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-secondary transition-all duration-500 placeholder:text-outline-variant/50 text-on-surface text-xl" id="email" name="email" placeholder="atelier@e-bookstore.com" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="group">
+<label class="block font-label text-[10px] tracking-[0.05em] uppercase font-semibold text-outline group-focus-within:text-secondary transition-colors duration-300 mb-2" for="password">Secure Password</label>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-3 focus:ring-0 focus:border-secondary transition-all duration-500 placeholder:text-outline-variant/50 text-on-surface text-xl" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-0 bottom-3 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Checkbox -->
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 border-outline-variant/30 text-secondary focus:ring-secondary/20 rounded-sm" id="terms" type="checkbox"/>
+<label class="text-xs text-on-surface-variant" for="terms">
+                                I agree to the <a class="text-primary font-semibold hover:underline decoration-secondary" href="#">Privacy Policy</a> and <a class="text-primary font-semibold hover:underline decoration-secondary" href="#">Terms of Service</a>.
+                            </label>
+</div>
+<!-- CTA -->
+<div class="pt-6">
+<button class="group relative w-full bg-primary text-on-primary py-5 px-8 font-headline font-bold uppercase tracking-[0.2em] text-xs flex items-center justify-between hover:bg-secondary transition-all duration-500 active:scale-[0.98]" type="submit">
+<span>Create Account</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-6 pt-4">
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase">Or Register With</span>
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+</div>
+<!-- Social Options -->
+<div class="grid grid-cols-2 gap-4">
+<button class="border border-outline-variant/20 py-4 flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="cloud">cloud</span>
+<span class="font-label text-[10px] tracking-widest uppercase font-bold">Google</span>
+</button>
+<button class="border border-outline-variant/20 py-4 flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="token">token</span>
+<span class="font-label text-[10px] tracking-widest uppercase font-bold">Apple</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-slate-50 border-t border-slate-100/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-screen-2xl mx-auto gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-headline font-bold text-lg text-black uppercase">E-BookStore</span>
+<p class="font-inter text-[10px] tracking-[0.05em] uppercase font-semibold text-slate-500">© 2024 E-BookStore. Built for the Digital Atelier.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-inter text-[10px] tracking-[0.05em] uppercase font-semibold text-slate-500 hover:underline decoration-amber-500 decoration-2 underline-offset-4 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-inter text-[10px] tracking-[0.05em] uppercase font-semibold text-slate-500 hover:underline decoration-amber-500 decoration-2 underline-offset-4 transition-opacity" href="#">Terms of Service</a>
+<a class="font-inter text-[10px] tracking-[0.05em] uppercase font-semibold text-slate-500 hover:underline decoration-amber-500 decoration-2 underline-offset-4 transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="font-inter text-[10px] tracking-[0.05em] uppercase font-semibold text-slate-500 hover:underline decoration-amber-500 decoration-2 underline-offset-4 transition-opacity" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<!-- Atelier Status Bar -->
+<div class="w-full bg-primary py-2 px-12 flex justify-between items-center overflow-hidden">
+<div class="flex gap-8 whitespace-nowrap animate-pulse">
+<span class="font-label text-[9px] tracking-[0.3em] uppercase text-on-primary-container font-medium">Session Secure</span>
+<span class="font-label text-[9px] tracking-[0.3em] uppercase text-on-primary-container font-medium">AES-256 Encryption Active</span>
+<span class="font-label text-[9px] tracking-[0.3em] uppercase text-on-primary-container font-medium">Global Delivery Available</span>
+</div>
+<div class="hidden md:block">
+<span class="font-label text-[9px] tracking-[0.3em] uppercase text-on-primary-container font-medium">12.04.24 // 09:42 GMT</span>
+</div>
+</div>
+</body></html>

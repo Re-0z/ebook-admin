@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | E-BookStore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "on-surface-variant": "#45464d",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-container-high": "#e2e7ff",
+                        "on-secondary-container": "#684000",
+                        "on-surface": "#131b2e",
+                        "error": "#ba1a1a",
+                        "outline": "#76777d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary": "#855300",
+                        "secondary-container": "#F59E0B",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "inverse-primary": "#bec6e0",
+                        "surface-bright": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#7c839b",
+                        "outline-variant": "#c6c6cd",
+                        "surface-tint": "#565e74",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#283044",
+                        "surface-container": "#eaedff",
+                        "primary-container": "#131b2e",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary-container": "#98805d",
+                        "on-background": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#131b2e",
+                        "background": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "surface-container-low": "#f2f3ff",
+                        "tertiary": "#000000",
+                        "secondary-fixed": "#ffddb8",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#271901",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-dim": "#d2d9f4",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "surface-variant": "#dae2fd",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8ff;
+            color: #131b2e;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar (Shared Component Execution) -->
+<!-- Suppressing full navigation links as per Transactional Flow rule -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-secondary tracking-tighter brand-font">E-BookStore</div>
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+                    Return to Library
+                </a>
+</div>
+</nav>
+<div class="bg-slate-100/50 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Shipping & Delivery -->
+<div class="lg:col-span-7">
+<header class="mb-12">
+<span class="text-secondary font-label text-xs uppercase tracking-widest font-semibold mb-2 block">Checkout Journey</span>
+<h1 class="text-4xl font-extrabold tracking-tight text-primary">Delivery Details</h1>
+<p class="mt-4 text-on-surface-variant leading-relaxed max-w-md">Provide your information below to finalize your acquisition of selected literature.</p>
+</header>
+<form class="space-y-10">
+<section>
+<h2 class="text-sm font-bold uppercase tracking-wider mb-6 text-on-primary-fixed-variant">Contact Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="full-name">Full Name</label>
+<input class="bg-transparent border-0 border-b border-outline-variant/30 py-2 px-0 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant/50 text-on-surface" id="full-name" placeholder="Julian Thorne" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="email">Email Address</label>
+<input class="bg-transparent border-0 border-b border-outline-variant/30 py-2 px-0 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant/50 text-on-surface" id="email" placeholder="julian@atelier.com" type="email"/>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-sm font-bold uppercase tracking-wider mb-6 text-on-primary-fixed-variant">Shipping Address</h2>
+<div class="space-y-8">
+<div class="flex flex-col">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="address">Street Address</label>
+<input class="bg-transparent border-0 border-b border-outline-variant/30 py-2 px-0 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant/50 text-on-surface" id="address" placeholder="42 Artisan Way, Floor 4" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="city">City</label>
+<input class="bg-transparent border-0 border-b border-outline-variant/30 py-2 px-0 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant/50 text-on-surface" id="city" placeholder="London" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="postal">Postal Code</label>
+<input class="bg-transparent border-0 border-b border-outline-variant/30 py-2 px-0 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant/50 text-on-surface" id="postal" placeholder="EC1A 1BB" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2" for="country">Country</label>
+<select class="bg-transparent border-0 border-b border-outline-variant/30 py-2 px-0 focus:ring-0 focus:border-secondary transition-all text-on-surface appearance-none" id="country">
+<option>United Kingdom</option>
+<option>United States</option>
+<option>Germany</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-sm font-bold uppercase tracking-wider mb-6 text-on-primary-fixed-variant">Payment Method</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="group cursor-pointer">
+<input checked="" class="hidden peer" name="payment" type="radio"/>
+<div class="p-6 border border-outline-variant/20 bg-surface-container-lowest peer-checked:border-secondary peer-checked:bg-secondary/5 transition-all flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary" data-icon="credit_card">credit_card</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Card</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" name="payment" type="radio"/>
+<div class="p-6 border border-outline-variant/20 bg-surface-container-lowest peer-checked:border-secondary peer-checked:bg-secondary/5 transition-all flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary" data-icon="account_balance">account_balance</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Bank</span>
+</div>
+</label>
+<label class="group cursor-pointer">
+<input class="hidden peer" name="payment" type="radio"/>
+<div class="p-6 border border-outline-variant/20 bg-surface-container-lowest peer-checked:border-secondary peer-checked:bg-secondary/5 transition-all flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary" data-icon="wallet">wallet</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Wallet</span>
+</div>
+</label>
+</div>
+</section>
+</form>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-5">
+<div class="sticky top-32">
+<div class="bg-surface-container-low p-8 lg:p-12">
+<h2 class="text-xl font-bold tracking-tight mb-8">Order Summary</h2>
+<!-- Order Items -->
+<div class="space-y-8 mb-10">
+<div class="flex gap-4">
+<div class="w-20 h-28 bg-white overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="minimalist white book cover with elegant serif typography on a textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6gRw9QHoNspBYNSsmrXOR8FFgGtYZvbOJl5Rd8USi5PoHQZCXDtlrB8AUCaSn3NjDpFXzSKSfNdboCNX0zIS90-PxqMOk-gVOPp4v5mQhLbJOUA0DxviBkm2aDQ861-PSoez_Tr6ua6vkgCpA-g2QORz-4zayxP6alymW70mKwXWDTxgb2AMWlQN_h-ImlWLTKyvcNX9swM_3Psg-J4308mn86mPAGCL8fuk0YY2l03BmpQ7mJsGty4idPwZwpoNM5kCpfe5TPci9"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="text-sm font-bold tracking-tight leading-tight">Architecture of Silence</h3>
+<p class="text-xs text-on-surface-variant mt-1">Lars Volkov</p>
+</div>
+<p class="text-sm font-semibold tracking-tight">$42.00</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-20 h-28 bg-white overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="black and white artistic book cover featuring abstract geometrical shapes and clean minimalist lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHFMvPSLRReT_QJhYvotQp6HdoDyWTtz2A71_iE2x2dxzBZGMT3A-ZlKtOtq5v6nwgOCZA91QMm-6FFfOY7vQ7etYLkLIzAzS-2EV75K_gl9h4KxWTFdvdRAn9hftjEf7oWH4GN7y-yZLL0psGPqwtk-ujm01I-3jguIp1UfHIic7p0tRxM6my7j6JIbul557QZ4JZVNEGeFk1-7uu82Vac4Er6AB6BK40B_4aCvllY-xU9RIEeosgs7W0V77h9wV_FqxuKlkmKj9e"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="text-sm font-bold tracking-tight leading-tight">The Modern Curator</h3>
+<p class="text-xs text-on-surface-variant mt-1">Elena Moretti</p>
+</div>
+<p class="text-sm font-semibold tracking-tight">$35.00</p>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="space-y-4 pt-8 border-t border-outline-variant/20">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="font-medium">$77.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Shipping</span>
+<span class="font-medium">$12.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Est. Taxes</span>
+<span class="font-medium">$6.16</span>
+</div>
+<div class="flex justify-between pt-4 text-lg font-bold tracking-tight border-t border-outline-variant/20 mt-4">
+<span>Total</span>
+<span class="text-secondary">$95.16</span>
+</div>
+</div>
+<button class="w-full mt-12 bg-secondary text-white font-bold tracking-widest uppercase text-[10px] py-5 transition-all hover:bg-black active:scale-[0.98]">
+                            Complete Purchase
+                        </button>
+<div class="mt-6 flex items-center justify-center gap-2 text-[10px] text-on-surface-variant/60 font-medium uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+                            Encrypted Transaction
+                        </div>
+</div>
+<!-- Atelier Status Bar (Custom Component) -->
+<div class="mt-4 bg-surface-container-high px-4 py-2 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase text-on-primary-fixed-variant">
+<span>Session: 2948-AX</span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                            Secure Connection
+                        </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Execution) -->
+<footer class="w-full border-t border-slate-100 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto gap-6">
+<div class="font-headline font-bold uppercase tracking-widest text-slate-900">E-BookStore</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-secondary transition-opacity text-sm font-['Inter']" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-secondary transition-opacity text-sm font-['Inter']" href="#">Terms</a>
+<a class="text-slate-500 hover:text-secondary transition-opacity text-sm font-['Inter']" href="#">Support</a>
+<a class="text-slate-500 hover:text-secondary transition-opacity text-sm font-['Inter']" href="#">Authors</a>
+</div>
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-500">© 2024 E-BookStore. Crafted for Readers.</p>
+</div>
+</footer>
+</body></html>
